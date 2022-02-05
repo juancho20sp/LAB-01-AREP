@@ -7,30 +7,30 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
-.idea/**/workspace.xml
-.idea/**/tasks.xml
-.idea/**/usage.statistics.xml
-.idea/**/dictionaries
-.idea/**/shelf
+Backend/.idea/**/workspace.xml
+Backend/.idea/**/tasks.xml
+Backend/.idea/**/usage.statistics.xml
+Backend/.idea/**/dictionaries
+Backend/.idea/**/shelf
 
 # AWS User-specific
-.idea/**/aws.xml
+Backend/.idea/**/aws.xml
 
 # Generated files
-.idea/**/contentModel.xml
+Backend/.idea/**/contentModel.xml
 
 # Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
+Backend/.idea/**/dataSources/
+Backend/.idea/**/dataSources.ids
+Backend/.idea/**/dataSources.local.xml
+Backend/.idea/**/sqlDataSources.xml
+Backend/.idea/**/dynamic.xml
+Backend/.idea/**/uiDesigner.xml
+Backend/.idea/**/dbnavigator.xml
 
 # Gradle
-.idea/**/gradle.xml
-.idea/**/libraries
+Backend/.idea/**/gradle.xml
+Backend/.idea/**/libraries
 
 # Gradle and Maven with auto-import
 # When using Gradle or Maven with auto-import, you should exclude module files,
@@ -49,25 +49,25 @@
 cmake-build-*/
 
 # Mongo Explorer plugin
-.idea/**/mongoSettings.xml
+Backend/.idea/**/mongoSettings.xml
 
 # File-based project format
 *.iws
 
 # IntelliJ
-out/
+Backend/out/
 
 # mpeltonen/sbt-idea plugin
-.idea_modules/
+Backend/.idea_modules/
 
 # JIRA plugin
 atlassian-ide-plugin.xml
 
 # Cursive Clojure plugin
-.idea/replstate.xml
+Backend/.idea/replstate.xml
 
 # SonarLint plugin
-.idea/sonarlint/
+Backend/.idea/sonarlint/
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
@@ -76,10 +76,10 @@ crashlytics-build.properties
 fabric.properties
 
 # Editor-based Rest Client
-.idea/httpRequests
+Backend/.idea/httpRequests
 
 # Android studio 3.1+ serialized cache file
-.idea/caches/build_file_checksums.ser
+Backend/.idea/caches/build_file_checksums.ser
 
 ### Intellij Patch ###
 # Comment Reason: https://github.com/joeblau/gitignore.io/issues/186#issuecomment-215987721
@@ -99,17 +99,17 @@ fabric.properties
 
 # Markdown Navigator plugin
 # https://plugins.jetbrains.com/plugin/7896-markdown-navigator-enhanced
-.idea/**/markdown-navigator.xml
-.idea/**/markdown-navigator-enh.xml
-.idea/**/markdown-navigator/
+Backend/.idea/**/markdown-navigator.xml
+Backend/.idea/**/markdown-navigator-enh.xml
+Backend/.idea/**/markdown-navigator/
 
 # Cache file creation bug
 # See https://youtrack.jetbrains.com/issue/JBR-2257
-.idea/$CACHE_FILE$
+Backend/.idea/$CACHE_FILE$
 
 # CodeStream plugin
 # https://plugins.jetbrains.com/plugin/12206-codestream
-.idea/codestream.xml
+Backend/.idea/codestream.xml
 
 ### Java ###
 # Compiled class file
@@ -138,32 +138,32 @@ hs_err_pid*
 replay_pid*
 
 ### Maven ###
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
-dependency-reduced-pom.xml
-buildNumber.properties
-.mvn/timing.properties
+Backend/target/
+Backend/pom.xml.tag
+Backend/pom.xml.releaseBackup
+Backend/pom.xml.versionsBackup
+Backend/pom.xml.next
+Backend/release.properties
+Backend/dependency-reduced-pom.xml
+Backend/buildNumber.properties
+Backend/.mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
-.mvn/wrapper/maven-wrapper.jar
+Backend/.mvn/wrapper/maven-wrapper.jar
 
 # Eclipse m2e generated files
 # Eclipse Core
-.project
+Backend/.project
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
+Backend/.classpath
 
 ### NetBeans ###
 **/nbproject/private/
 **/nbproject/Makefile-*.mk
 **/nbproject/Package-*.bash
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+Backend/build/
+Backend/nbbuild/
+Backend/dist/
+Backend/nbdist/
+Backend/.nb-gradle/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven,netbeans,intellij
