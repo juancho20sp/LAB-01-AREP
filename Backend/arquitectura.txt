@@ -1,0 +1,5 @@
+Cliente servidor
+
+Usando un path para dividir las rutas de la versión 1
+
+Se utiliza Gson para manejar respuestas como JSON

@@ -1,5 +1,7 @@
 package edu.escuelaing.arep.services;
 
+import com.google.gson.JsonObject;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -11,6 +13,10 @@ public class ConverterService {
      */
     public double celsiusToFahrenheit(double value){
         double res = (value * 9/5) + 32;
+
+        res = BigDecimal.valueOf(res)
+                .setScale(4, RoundingMode.HALF_UP)
+                .doubleValue();
 
         return res;
     }

@@ -1,17 +1,55 @@
 package edu.escuelaing.arep;
+import com.google.gson.JsonObject;
+import edu.escuelaing.arep.services.ConverterService;
+
+import com.google.gson.Gson;
+import edu.escuelaing.arep.services.ConverterServiceImpl;
+import edu.escuelaing.arep.utils.Errors;
+
 import static spark.Spark.*;
-/**
- * Hello world!
- *
- */
+
+
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main( String[] args ) {
+        final ConverterServiceImpl converterServiceImpl = new ConverterServiceImpl();
+        final Errors errors = new Errors();
+
+        // Set the port
         port(getPort());
-        get("/hello", (req, res) -> "Hello Heroku");
-        get("/hola", (req, res) -> "Hola Heroku");
+
+        path("/api/v1", () -> {
+            path("/celsius", () -> {
+                get("", (req, res) -> {
+                    res.type("application/json");
+                    String value = req.queryParams("value");
+
+                    if(value != null && converterServiceImpl.isValueValid(value)) {
+                        return converterServiceImpl.celsiusToFahrenheit(Double.parseDouble(value));
+                    } else {
+                        JsonObject error = errors.formatError();
+                        error.addProperty("value", value);
+
+                        return error;
+                    }
+                });
+            });
+            path("/fahrenheit", () -> {
+                get("", (req, res) -> {
+                    res.type("application/json");
+                    String value = req.queryParams("value");
+
+                    if(value != null && converterServiceImpl.isValueValid(value)) {
+                        return converterServiceImpl.fahrenheitToCelsius(Double.parseDouble(value));
+                    } else {
+                        JsonObject error = errors.formatError();
+                        error.addProperty("value", value);
+
+                        return error;
+                    }
+                });
+            });
+        });
     }
 
     static int getPort() {
