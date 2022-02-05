@@ -14,6 +14,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Montserrat', sans-serif;
 }
 
 body {
@@ -35,7 +37,7 @@ main {
     grid-area: main;
 
     display: grid;
-    place-items: center;
+    grid-template-rows: 20% 20% 1fr;
 }
 
 footer {
@@ -43,11 +45,34 @@ footer {
     grid-area: footer;
 }
 
-.inputContainer {
+.header--text {
+    display: grid;
+    place-items: center;
+}
+
+.main--container {
+    width: 100%;
+
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-units {
+    width: 60%;
+    height: 3.2rem;
+
+    display: flex;
+}
+
+.input--container {
     position: relative;
 }
 
-.inputContainer--input {
+.input--container__input {
     width: 100%;
     height: 100%;
 
@@ -61,13 +86,13 @@ footer {
     Show the label at desired position when the 
     placeholder of input isn't shown
 */
-.inputContainer--input:not(:placeholder-shown) + .inputContainer--label {
-    background: #fff;
-    transform: translate(0, -50%);
+.input--container__input:not(:placeholder-shown) + .input--container__label {
+    background: transparent;
+    transform: translate(5%, -95%);
     opacity: 1;
 }
 
-.inputContainer--label {
+.input--container__label {
     /* Position the label */
     left: 8px;
     position: absolute;
@@ -78,9 +103,72 @@ footer {
     transition: all 200ms;
 }
 
-.header--text {
-    display: grid;
-    place-items: center;
+.input-units .input--container {
+    flex: 3;
+    height: 100%;
+}
+
+.input-units--select {
+    flex: 1;
+    max-width: 35%;
+
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space: nowrap;
+}
+
+.input--container__error {
+    color: red;
+    
+    margin: 10px 0;
+}
+
+.main--button__container {
+    padding-top: var(--md-text-size);
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main--button {
+    border-radius: var(--border-radius);
+
+    width: 25%;
+    height: var(--bg-text-size);
+
+    transition: all 0.2s;
+}
+
+.main--button:hover {
+    cursor: pointer;
+
+    transform: scale(0.97);    
+    background-color: var(--third-color);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.main--result__container {
+    display: flex;
+    justify-content: center;
+}
+
+.main--result {
+    text-align: center;
+    font-size: var(--md-text-size);
+}
+
+.main--result__value::before{
+    content: "\a";
+    white-space: pre;
+}
+
+.main--result__loader{
+    text-align: center;
+    font-size: var(--md-text-size);
 }
 
 .footer--text {
@@ -88,37 +176,12 @@ footer {
     place-items: center;
 }
 
-.main--container {
-    border: 2px solid red;
-
-    width: 60vw;
-
-    display: flex;
+/* STATES */
+.hidden {
+    display: none;
 }
 
-.main--container div{
-    /* background-color: rebeccapurple !important; */
-    /* flex: 1; */
-}
-
-.input-units {
-    border: 2px solid black;
-
-    width: 50%;
-    height: 3.2rem;
-    
-
-    display: flex;
-}
-
-.input-units .inputContainer {
-    flex: 3;
-    height: 100%;
-}
-
-.input-units--select {
-    flex: 1;
-
-    border-top-right-radius: var(--border-radius);
-    border-bottom-right-radius: var(--border-radius);
+.warning {
+    border: 3px solid red;
+    outline: red;
 }

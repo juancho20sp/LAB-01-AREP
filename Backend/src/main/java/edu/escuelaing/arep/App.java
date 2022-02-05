@@ -1,10 +1,9 @@
 package edu.escuelaing.arep;
 import com.google.gson.JsonObject;
-import edu.escuelaing.arep.services.ConverterService;
 
-import com.google.gson.Gson;
 import edu.escuelaing.arep.services.ConverterServiceImpl;
 import edu.escuelaing.arep.utils.Errors;
+import spark.Filter;
 
 import static spark.Spark.*;
 
@@ -17,6 +16,24 @@ public class App
 
         // Set the port
         port(getPort());
+
+        // Allow CORS
+        options("/*",
+                (request, response) -> {
+                    String accessControlRequestHeaders = request.headers("Access-Control-Request-Headers");
+                    if (accessControlRequestHeaders != null) {
+                        response.header("Access-Control-Allow-Headers", accessControlRequestHeaders);
+                    }
+
+                    String accessControlRequestMethod = request.headers("Access-Control-Request-Method");
+                    if (accessControlRequestMethod != null) {
+                        response.header("Access-Control-Allow-Methods", accessControlRequestMethod);
+                    }
+
+                    return "OK";
+                });
+
+        before((request, response) -> response.header("Access-Control-Allow-Origin", "*"));
 
         path("/api/v1", () -> {
             path("/celsius", () -> {

@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Convertidor de unidades</title>
 </head>
 
@@ -17,41 +20,34 @@
     <main>
         <div class="main--container">
             <div class="input-units">
-                <div class="inputContainer">
-                    <input placeholder="Placeholder" class="inputContainer--input" type="number" />
+                <div class="input--container">
+                    <input placeholder="Ingrese un valor" class="input--container__input" type="number" />
 
-                    <label class="inputContainer--label">Placeholder</label>
+                    <label class="input--container__label">Ingrese un valor</label>
                 </div>
 
                 <select class="input-units--select" name="from-units" id="" required>
-                    <option value="">Grados</option>
-                    <option value="">Fahrenheit</option>
-                    <option value="">Celsius</option>
+                    <option value="-1">Seleccione una opción</option>
+                    <option value="0">Celsius</option>
+                    <option value="1">Fahrenheit</option>
                 </select>
-
-                <!-- <div>
-                    <label for="from-units">Unidades:</label> -->
-
-                <!-- </div> -->
             </div>
 
-            <!-- <div>
-                <div class="inputContainer">
-                    <input placeholder="Placeholder" class="inputContainer--input" type="number" />
-
-                    <label class="inputContainer--label">Placeholder</label>
-                </div>
-                <div>
-                    <label for="from-units">Unidades:</label>
-                    <select name="from-units" id="" required>
-                        <option value="">Seleccione una opción</option>
-                        <option value="">Fahrenheit</option>
-                        <option value="">Celsius</option>
-                    </select>
-                </div>
-            </div> -->
+            <p class="input--container__error hidden">Este campo es requerido</p>
         </div>
-        <button>Convertir unidades</button>
+
+        <div class="main--button__container">
+            <button class="main--button">Convertir unidades</button>
+        </div>
+
+        <div class="main--result__container hidden">
+            <div class="main--result hidden">
+                <p>El resultado es:</p>
+                <p class="main--result__value"></p>
+            </div>
+
+            <p class="main--result__loader hidden">Cargando...</p>
+        </div>
     </main>
 
     <footer class="footer--text">
