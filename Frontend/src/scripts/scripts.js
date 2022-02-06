@@ -53,7 +53,11 @@ const sendRequest = async () => {
         const unit = unitSelect.value === '0' ? 'celsius' : 'fahrenheit';
         const value = valueInput.value;
 
-        const url = `http://localhost:4567/api/v1/${unit}?value=${value}`;
+        // Dev url
+        // const url = `http://localhost:4567/api/v1/${unit}?value=${value}`;
+
+        // Prod
+        const url = `https://lab-01-arep-back.herokuapp.com/api/v1/${unit}?value=${value}`;
 
         try {
             // Show loader
